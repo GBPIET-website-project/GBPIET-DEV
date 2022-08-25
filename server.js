@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 dotenv.config({path:"./config.env",debug:true});
-const PORT = 3000||process.env.PORT;
+const PORT = process.env.PORT||2000;
+const DB = process.env.DATABASE;
 const app = express();
 app.use(express.static(path.join(__dirname,'Public')));
 app.set('view engine','ejs');
@@ -17,9 +18,17 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+mongoose.connect(DB).then(()=>{
+    console.log("Connected to database");
+}).catch((err)=>{
+    console.log(err);
+})
+
 const homeRoute = require('./Routes/home');
+const loginSignupRoute = require('./Routes/loginSignup');
 
 app.use("",homeRoute);
+app.use("",loginSignupRoute);
 
 app.listen(PORT,()=>{
     console.log(`Listening on http://localhost:${PORT}`);
