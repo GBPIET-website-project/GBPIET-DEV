@@ -12,10 +12,13 @@ const authenticate = async(req,res,next)=>{
         console.log(verifiedToken);
         const verifiedUser = await Admin.findById(verifiedToken.id);
         if(verifiedUser){
-            console.log(verifiedUser);
+            res.locals.authenticated = true;
+            res.locals.id = verifiedUser.id;
         }
         next();
     }catch(err){
+        res.locals.authenticated = false;
+        res.locals.id = null;
         console.log(err);
     }
 }

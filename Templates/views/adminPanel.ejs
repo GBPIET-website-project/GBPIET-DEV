@@ -1,0 +1,66 @@
+<!-- navigation bar -->
+
+<%-include('../partials/adminHeader');%>
+
+    <!-- navigation bar end -->
+
+    <!-- Visitors count Section start-->
+
+    <section class="no-of-visitors-parent">
+        <div class="no-of-visitors-container">
+            <div class="visitor-text-container">
+                <span class="text">Visitors Count</span>
+                <i class="large material-icons">trending_up</i>
+            </div>
+            <div class="visitor-num-container">
+                <span class="num" data-val="400">000</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visitors count Section end-->
+
+    <!-- admin action Section -->
+
+    <section class="admin-section-parent">
+        <div class="primary-actions-container">
+            <div class="primary-actions-heading">
+                <p>Primary Actions</p>
+                <i class="large material-icons">chevron_right</i>
+            </div>
+            <div class="primary-actions-card-conatiner">
+                <div class="primary-actions-card">
+                    <div class="primary-action-icon">
+                        <img src="/images/news.svg" alt="">
+                    </div>
+                    <div class="primary-action-text">
+                        <a href="/managePanel?taskId=1">Manage News</a>
+                    </div>
+                </div>
+                <div class="primary-actions-card">
+                    <div class="primary-action-quicklink-icon">
+                        <img src="/images/quicklinks.svg" alt="">
+                    </div>
+                    <div class="primary-action-text">
+                        <a href="/managePanel?taskId=2">Manage Quicklinks</a>
+                    </div>
+                </div>
+                <div class="primary-actions-card">
+                    <div class="primary-action-icon">
+                        <img src="/images/tender.svg" alt="">
+                    </div>
+                    <div class="primary-action-text">
+                        <a href="/managePanel?taskId=3">Manage Tenders</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="manage-admin-section-parent">
+
+    </section>
+    <!-- Footer section -->
+    <%-include('../partials/adminFooter');%>
+    
+    <script src="/SCRIPT/adminPanel.js"></script>
