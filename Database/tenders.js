@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const newsSchema = new mongoose.Schema({
+const tendersSchema = new mongoose.Schema({
     title:{
         type: String,
         require:true
@@ -15,9 +15,9 @@ const newsSchema = new mongoose.Schema({
 },
 { timestamps: true },
 {
-    colllections:'newsData'
+    colllections:'tendersData'
 }
 );
 
-const model = new mongoose.model('newsData',newsSchema);
+const model = new mongoose.model('tendersData',tendersSchema);
 module.exports = model; 

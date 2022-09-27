@@ -10,11 +10,11 @@ const closeNewsForm = ()=>{
     newsForm.style.display = 'none';
 }
 
-// Function to delete News data
+// Function to delete Links data
 
 const deleteNews = async(id)=>{
     if(confirm('Are you sure you want to delete this News ? ') == true ){
-        const data = await fetch(`/deleteNews?id=${id}&panel=1`,{
+        const data = await fetch(`/deleteQuickLinks/${id}`,{
             method: 'DELETE',
             headers: {
                 contentType: 'application/json'
@@ -28,7 +28,7 @@ const deleteNews = async(id)=>{
 
 }
 
-//function to create a news
+//function to create a QuickLink
 
 const postBlog = async() => {
     formFields.addEventListener('submit', async(e) => {
@@ -36,7 +36,7 @@ const postBlog = async() => {
         const formData = new FormData(document.getElementById("form"));
 
         try {
-            const res = await fetch(`/managePanelPost/1`, {
+            const res = await fetch(`/managePanelPost/2`, {
                 method: 'POST',
                 body: formData
             })

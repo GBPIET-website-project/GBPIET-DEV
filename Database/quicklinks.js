@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const newsSchema = new mongoose.Schema({
+const linksSchema = new mongoose.Schema({
     title:{
         type: String,
         require:true
@@ -9,15 +9,16 @@ const newsSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    file:{
-     type: Schema.Types.Object 
+    url:{
+        type:String,
+        require:true
     }
 },
 { timestamps: true },
 {
-    colllections:'newsData'
+    colllections:'linksData'
 }
 );
 
-const model = new mongoose.model('newsData',newsSchema);
+const model = new mongoose.model('linksData',linksSchema);
 module.exports = model; 

@@ -14,7 +14,7 @@ const closeNewsForm = ()=>{
 
 const deleteNews = async(id)=>{
     if(confirm('Are you sure you want to delete this News ? ') == true ){
-        const data = await fetch(`/deleteNews?id=${id}&panel=1`,{
+        const data = await fetch(`/deleteNews?id=${id}&panel=3`,{
             method: 'DELETE',
             headers: {
                 contentType: 'application/json'
@@ -36,7 +36,7 @@ const postBlog = async() => {
         const formData = new FormData(document.getElementById("form"));
 
         try {
-            const res = await fetch(`/managePanelPost/1`, {
+            const res = await fetch(`/managePanelPost/3`, {
                 method: 'POST',
                 body: formData
             })

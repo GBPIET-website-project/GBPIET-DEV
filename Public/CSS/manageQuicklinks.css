@@ -1,142 +1,173 @@
-/* admin Panel CSS */
-
-/* Visitors count section */
-
-.no-of-visitors-parent{
-    width: 100vw;
-    height: auto;
+*{
+    margin: 0px;
+    top:0;
 }
 
-.no-of-visitors-container{
-    width: inherit;
-    display: flex;
-    height: auto;
-    padding: 1rem;
-}
-
-.visitor-text-container{
-    width: 60%;
-    display: flex;
-    justify-content:flex-end;
-    font-size: 3rem;
-    border-radius:1rem 0rem 0rem 1rem;
-    background-color: #f4f4f4;
-}
-
-.visitor-num-container{
-    width: 40%;
-    border-radius:0rem 1rem 1rem 0rem;
-    background-color: #5656f56b;
-    padding-left: 1rem;
-}
-
-.num{
-    font-size: 3rem;
-}
-
-/* primary action section */
-
-.admin-section-parent{
-    width: 100vw;
-    height: auto;
-}
-
-.primary-actions-container{
-    width:inherit;
+.display-news-section{
+    display:flex;
+    flex-direction:column;
+    width:100vw;
     height:auto;
 }
 
-.primary-actions-heading{
+.news-section-display-parent{
     display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:3rem;
 }
 
-.primary-actions-heading p{
-    padding-left:1rem;
+.hr-line{
+    width:42.5rem;
+    height:0rem;
+    border-bottom:1px solid black;
+    position: relative;
+    left: 2rem;
 }
 
-.primary-actions-card-conatiner{
+.news-info-container-parent{
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.news-container{
+    width:50%;
+    display:flex;
+    height:auto;
+    margin-top:1rem;
+}
+
+.news-date{
+    width:15%;
+    border:1px solid #0d6efd;;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:1rem;
+    color:#0d6efd;
+}
+
+.news-name{
+    width:85%;
+    display:flex;
+    margin-left: .5rem;
+    align-items:center;
+}
+ 
+.news-name a{
+    text-decoration: none;
+    color: rgb(54, 54, 54);
+    font-size: 1.5rem;
+}
+
+.news-name a:hover{
+    color:#0d6efd;
+}
+
+.indexing-section{
+    display:flex;
+    margin:1rem 0rem;
+    height:2rem;
+}
+
+.prev-section{
+    width: 10%;
+    color: white;
+    background-color: black;
     display: flex;
-    height: auto;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    padding:2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 10px 10px 0px;
+
 }
 
-.primary-actions-card{
-    width: 15%;
-    height: auto;
+.middle-section{
+    width:80%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.next-section{
+    width: 10%;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0px 0px 10px;
+}
+
+
+.add-news-btn{
     display: flex;
     flex-direction: column;
-}
-
-.primary-action-icon{
-    height:auto;
-    width:100%;
-}
-
-.primary-action-icon img{
-    width:100%;
-    height:10rem;
-}
-
-.primary-action-quicklink-icon{
-    height:auto;
-    width:100%;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.primary-action-quicklink-icon img{
-    width:60%;
-    height:10rem;
-}
-
-.primary-action-text{
+    position: relative;
+    top: 83px;
+    left: 23rem;
+    width: 4rem;
     height: 4rem;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background-color:#5656f56b;
-    border-radius:0rem 0rem 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    border-radius: 6rem;
 }
 
-.primary-action-text a{
-    text-decoration:none;
-    color:black;
-    font-size:1.3rem;
-    font-weight: 500;
-}
-
-.primary-actions-card:hover{
-    border-radius:1rem 1rem 1rem 1rem;
-    background-color:#1d1d996b;
-    transition:ease-in-out 1s;
-    box-shadow: 5px 10px 18px #888888;
-}
-
-.primary-action-text a:hover{
+.add-news-btn:hover{
+    cursor: pointer;
+    background-color:#0d6efd;
     color:white;
-    font-weight: 600;
+    transition:ease-in-out;
+    transition-duration:.5s;
 }
 
-/* manage admin section */
-
-.manage-admin-section-parent{
-    height:10rem;
-    width: 95vw;
+#news-form-overlay{
+    position: fixed;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#form{
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.form-in{
+    width:100% !important;
+}
 
+.close-news-btn{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom:.5rem;
+}
 
+.close-icon:hover{
+    background-color: #0d6efd;
+    color: white;
+    cursor: pointer;
+}
 
+/* Footer css */
 
-/*
-footer
-  */
-
-  .footer-search {
+.footer-search {
     margin-left: 270px;
 }
 

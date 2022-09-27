@@ -11,8 +11,12 @@ router.get('/adminPanel',adminPanelController.getAdminPanel);
 
 router.get('/managePanel',adminPanelController.getPrimaryPanel);
 
-router.post('/managePanelPost',uploader.array('file'),adminPanelController.postPrimaryTask);
+router.post('/managePanelPost/:id',uploader.array('file'),adminPanelController.postPrimaryTask);
 
 router.get('/news',adminPanelController.getNews);
+
+router.delete('/deleteNews',adminPanelController.deleteNews);
+
+router.get('/displayNews',adminPanelController.getDisplayNews);
 
 module.exports = router;
