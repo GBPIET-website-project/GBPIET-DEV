@@ -1,6 +1,7 @@
 const News = require('../Database/news');
 const Quicklinks = require('../Database/quicklinks');
 const Tenders = require('../Database/tenders');
+const Bulletin = require('../Database/bulletin');
 const fs = require('fs');
 const path = require('path');
 const { join } = require('path');
@@ -28,12 +29,19 @@ const indexedResult = async (pageNo, perpage, panel) => {
             console.log(err);
         }
     }
-    else {
+    else if(panel == "tenders"){
         try {
             data = await Tenders.find();
         } catch (err) {
             console.log(err);
         }
+    }
+    else{
+        try {
+            data = await Bulletin.find();
+        } catch (err) {
+            console.log(err);
+        } 
     }
     data.reverse();
     if (data.length < perpage) {
@@ -63,10 +71,15 @@ exports.getPrimaryPanel = async (req, res) => {
         console.log(data);
         res.render('manageQuicklinks', { style: 'manageQuicklinks', links: data, pages: noOfPages, page: pageNo });
     }
-    else {
+    else if(id == 3) {
         data = await indexedResult(pageNo, perpage, "tenders");
         console.log(data);
-        res.render('manageTenders', { style: 'manageNews', tenders: data, pages: noOfPages, page: pageNo })
+        res.render('manageTenders', { style: 'manageNews', tenders: data, pages: noOfPages, page: pageNo });
+    }
+    else{
+        data = await indexedResult(pageNo, perpage,"bulletin");
+        console.log(data);
+        res.render('manageBulletin', { style: 'manageNews', bulletins: data, pages: noOfPages, page: pageNo });
     }
 }
 

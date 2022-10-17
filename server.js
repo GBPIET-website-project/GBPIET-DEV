@@ -27,10 +27,12 @@ mongoose.connect(DB).then(()=>{
 const homeRoute = require('./Routes/home');
 const loginSignupRoute = require('./Routes/loginSignup');
 const adminPanelroute = require('./Routes/admin');
+const aboutusRoute = require('./Routes/aboutus');
 
 app.use("",homeRoute);
 app.use("",loginSignupRoute);
 app.use("",adminPanelroute);
+app.use("",aboutusRoute);
 
 app.listen(PORT,()=>{
     console.log(`Listening on http://localhost:${PORT}`);

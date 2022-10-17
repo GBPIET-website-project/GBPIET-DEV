@@ -8,6 +8,6 @@ let counter = setInterval(() => {
     noOfVisitors.textContent = startVal;
     if (startVal == endVal) {
         clearInterval(counter);
-        noOfVisitors.style.color = "#6418b8";
+        noOfVisitors.style.color = "black";
     }
 }, duration);

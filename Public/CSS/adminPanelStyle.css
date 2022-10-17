@@ -26,7 +26,7 @@
 .visitor-num-container{
     width: 40%;
     border-radius:0rem 1rem 1rem 0rem;
-    background-color: #5656f56b;
+    background-color: #c5cfea;
     padding-left: 1rem;
 }
 
@@ -97,7 +97,7 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:#5656f56b;
+    background-color:#c5cfea;
     border-radius:0rem 0rem 1rem 1rem;
 }
 
@@ -127,10 +127,41 @@
     width: 95vw;
 }
 
+/* Other actions part */
 
+.other-actions-heading{
+    display:flex;
+    flex-direction: row;
+    padding-left: 1rem;
+}
 
+.other-actions-cards-container{
+    display:flex;
+    flex-wrap: wrap;
+}
 
+.other-action-container{
+    width:30%;
+    margin:1rem;
+    background-color: #c5cfea;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius:1rem;
+    padding:.5rem;
+}
 
+.other-action-container a{
+    margin:0;
+    font-size:1.2rem;
+    text-decoration:none;
+    color:black;
+}
+
+.other-action-container:hover{
+    background-color:#1d1d996b;
+    cursor: pointer;
+}
 
 /*
 footer

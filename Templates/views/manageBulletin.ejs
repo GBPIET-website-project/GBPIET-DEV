@@ -1,0 +1,84 @@
+<%-include('../partials/adminHeader');%>
+<!-- section for showing all news -->
+<section class="display-news-section">
+    <div class="add-news-btn" onclick="openNewsForm()">
+        <i class="large material-icons">add</i>
+    </div>
+    <div class="news-section-display-parent">
+        <h2>Bulletin</h2>
+        <div class="hr-line">
+            <!-- for horizontal line -->
+        </div>
+    </div>
+    <% bulletins.forEach((bullet)=>{ %>
+    <div class="news-info-container-parent">
+        <div class="news-container">
+            <div class="news-date">
+                <div class="date">
+                    <h1><%= bullet.createdAt.toLocaleDateString().slice(0,2) %></h1>
+                </div>
+                <div class="news-month">
+                    <% var d=new Date(bullet.createdAt.toLocaleDateString().slice(6,10), bullet.createdAt.toLocaleDateString().slice(3,5), bullet.createdAt.toLocaleDateString().slice(0,2)); %>
+                    <% var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
+                    <% var monthIndex = d.getMonth(); %>
+                    <p><%= months[monthIndex-1] %></p>
+                </div>
+            </div>
+            <div class="news-name">
+                <a href="/displayNews?id=<%= bullet._id %>&panel=1"><%= bullet.title %></a>
+            </div>
+        </div>
+        <div class="action-btns">
+            <a href="javascript:;" onclick="deleteNews('<%= bullet._id %>')"><i class="large material-icons">delete</i></a>
+        </div>
+    </div>
+    <% }) %>
+    <div class="indexing-section">
+        <% if(page > 1 ){ %>
+        <div class="prev-section">
+            <a href="/managePanel?taskId=1&pageNo=<%= (parseInt(page)-parseInt(1)) %>&perpage=5"><i class="large material-icons">chevron_left</i></a>    
+        </div>
+        <% } %>
+        <div class="middle-section">
+            <p><%=page%>/<%=pages%></p>
+        </div>
+        <% if(page < pages) { %>
+        <div class="next-section">
+            <a href="/managePanel?taskId=1&pageNo=<%= (parseInt(page)+parseInt(1)) %>&perpage=5"><i class="large material-icons">chevron_right</i></a>
+        </div>
+        <% } %> 
+    </div>
+</section>
+
+
+
+<!-- section  for posting new News -->
+
+<section id="news-form-overlay" style="display: none; "> 
+
+    <form enctype="multipart/form-data" id="form">
+        <div class="close-news-btn" onclick="closeNewsForm()">
+            <i class="large material-icons close-icon">close</i>
+        </div>
+        <div class="form-group mb-4 form-in">
+            <input style="height: 50px; font-size: 20px;" type="text" name="title" id="title"
+                class="form-control" placeholder="Enter title for your news">
+        </div>
+
+        <div class="form-group  form-in">
+            <textarea style="font-size: 20px; " name="description" id="description" class="form-control" rows="7"
+                placeholder="Enter Description"></textarea>
+        </div> 
+
+
+        <div class="form-group mb-4 text-center
+                justify-content-center  form-in">
+            <input style="height: 50px; font-size: 20px; " type='file' name="file" id="image"
+                class="form-control" accept="image/*" multiple>
+        </div>
+        <button class="btn btn-secondary btns mx-3" type="submit" >Save</button>
+    </form>
+</section>
+
+<%-include('../partials/adminFooter');%>
+<script src="/SCRIPT/adminNews.js"></script>

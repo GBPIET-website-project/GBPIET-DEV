@@ -1,0 +1,79 @@
+<%-include('../partials/header');%> 
+<body>
+    <section >
+        <div class="child4" >
+            <div class="header">
+                <h1 class="heading">About College</h1>
+            </div>
+            <div class="paragraph" >
+                <p class="para">Govind Ballabh Pant Institute of Engineering & Technology, Pauri is an Institute with total commitment to quality and excellence in academic pursuits. The College was established in 1989, as an autonomous body, with a view to fulfil the ever-growing demand for well-trained professionals. It is one of the few premier colleges imparting technical education in the state of Uttarakhand.</p>
+                <p  class="para">The Institute tarted its first academic session from 1991-92 with a limited intake. The Institute was then affiliated to the Hemwati Nandan Bahuguna Garhwal University, Srinagar (Garhwal). From the academic year 2006-2007, the college got affiliated to the Uttarakhand Technical University, Dehradun year by year and getting disaffiliated from the H.N.B. Garhwal University. Since the academic year 2012-2013, the college got fully autonomous.<span id="dots">...</span><span id="more">
+                <br>Institute is a fully residential leading institution of the State, offering degree courses in highly sought-after disciplines of Computer Science & Engineering, Computer Science & Engineering(AI& ML) Electronics & Communication Engineering, Electrical Engineering., Mechanical Engineering, Manufacturing Engineering and Civil Engineering. The College also offers Masters degree course in Computer Applications, and M.Tech. courses in Digital Signal Processing, Production Engineering, Electrical Engineering, Civil Engineering and Biotechnology. From 2013-2014 The college started providing Doctoral courses<br>The Institute has a very progressive policy towards extending all possible facilities to its faculty members to acquire higher degrees and receive advanced training. As a result, majority of the faculty members possess Ph.D. degrees. The entire campus is networked with 256 Mbps lease lines.</span></p>
+                <button onclick="myFunction()" id="myBtn">Read more</button>
+            </div>
+        </div>
+        <div class="child5">
+            <div class="header">
+                <h1 class="heading">Current Institutional Information</h1>
+            </div>
+            <div>
+                <table class="table">
+                    <tbody>
+                        <tr class="trow">
+                            <td class="row">Name of the Institution:</td>
+                            <td class="row">G. B. Pant Institute of Engineering & Technology, Ghurdauri, Pauri-Garhwal</td>
+                        </tr>
+                        
+                        <tr class="trow">
+                            <td class="row">Mailing address:</td>
+                            <td class="row">Ghurdauri, Distt. Pauri-Garhwal, Uttarakhand, 246194</td>
+                        </tr>
+                        
+                        <tr class="trow">
+                            <td class="row">Year of establishment:</td>
+                            <td class="row">1989</td>
+                        </tr>
+                        
+                        <tr class="trow">
+                            <td class="row">Funding Pattern:</td>
+                            <td class="row">State Government Aided</td>
+                        </tr>
+                        
+                        <tr class="trow">
+                            <td class="row">Functional Status:</td>
+                            <td class="row">Autonomous College</td>
+                        </tr>
+                        
+                        <tr class="trow">
+                            <td class="row">Particulars of the Head of the Institution:</td>
+                            <td class="row">Dr. Yashvir Singh
+                                <br>
+                                Director, G. B. Pant Institute of Engineering & Technology, Ghurdauri, Pauri-Garhwal
+                                <br>
+                                E-mail: principal@gbpec.ac.in</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <%-include('../partials/footer');%>
+    <script>
+        function myFunction() {
+          var dots = document.getElementById("dots");
+          var moreText = document.getElementById("more");
+          var btnText = document.getElementById("myBtn");
+        
+          if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more"; 
+            moreText.style.display = "none";
+          } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less"; 
+            moreText.style.display = "inline";
+          }
+        }
+        </script>
+
+
